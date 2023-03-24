@@ -4,7 +4,17 @@ const Header = (props) => {
   )
 }
 
-const Content = (props) => props.content.map(part => <p key={part.id}>{part.name} {part.exercises}</p>)
+const Content = (props) => {
+  return (
+    <div>
+      <Part name={props.content[0].name} exercises={props.content[0].exercises}/>
+      <Part name={props.content[1].name} exercises={props.content[1].exercises}/>
+      <Part name={props.content[2].name} exercises={props.content[2].exercises}/>
+    </div>
+  )
+}
+
+const Part = (props) => <p>{props.name} {props.exercises}</p>
 
 const Total = (props) => <p>Number of exercises {props.total[0] + props.total[1] + props.total[2]}</p>
 
